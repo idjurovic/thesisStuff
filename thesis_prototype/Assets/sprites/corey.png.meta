@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: e189aca946b23cb44b9edfb6f8f3df10
+timeCreated: 1463461312
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: corey_0
+    21300002: corey_1
+    21300004: corey_2
+    21300006: corey_3
+    21300008: corey_4
+    21300010: corey_5
+    21300012: corey_6
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: corey_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 52}
+        - {x: -47, y: 41}
+        - {x: -47, y: -44}
+        - {x: -45, y: -52}
+        - {x: -14, y: -80}
+        - {x: 17, y: -80}
+        - {x: 37, y: -62}
+        - {x: 37, y: 11}
+        - {x: -7, y: 52}
+    - name: corey_1
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -37, y: 47}
+        - {x: -47, y: 37}
+        - {x: -47, y: -49}
+        - {x: -43, y: -66}
+        - {x: -32, y: -80}
+        - {x: 31, y: -80}
+        - {x: 37, y: -77}
+        - {x: 37, y: 3}
+        - {x: -7, y: 47}
+    - name: corey_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -35, y: 47}
+        - {x: -47, y: 34}
+        - {x: -47, y: -61}
+        - {x: -31, y: -80}
+        - {x: 32, y: -80}
+        - {x: 37, y: -76}
+        - {x: 37, y: 4}
+        - {x: -8, y: 47}
+    - name: corey_3
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -8, y: 47}
+        - {x: -35, y: 47}
+        - {x: -47, y: 34}
+        - {x: -47, y: -47}
+        - {x: -43, y: -56}
+        - {x: -40, y: -80}
+        - {x: 37, y: -80}
+        - {x: 37, y: -5}
+        - {x: 35, y: 2}
+    - name: corey_4
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -47, y: 52}
+        - {x: -47, y: -52}
+        - {x: -34, y: -80}
+        - {x: 20, y: -80}
+        - {x: 37, y: -63}
+        - {x: 37, y: 8}
+        - {x: -7, y: 52}
+    - name: corey_5
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -32, y: 52}
+        - {x: -47, y: 37}
+        - {x: -47, y: -54}
+        - {x: -17, y: -80}
+        - {x: 20, y: -80}
+        - {x: 37, y: -61}
+        - {x: 37, y: 9}
+        - {x: -11, y: 52}
+    - name: corey_6
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36, y: 52}
+        - {x: -47, y: 41}
+        - {x: -47, y: -44}
+        - {x: -45, y: -52}
+        - {x: -14, y: -80}
+        - {x: 17, y: -80}
+        - {x: 37, y: -62}
+        - {x: 37, y: 11}
+        - {x: -7, y: 52}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
