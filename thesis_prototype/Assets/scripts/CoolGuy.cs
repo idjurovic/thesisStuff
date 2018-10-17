@@ -24,6 +24,16 @@ public class CoolGuy : MonoBehaviour {
         thePlayer = GameObject.FindGameObjectWithTag("Player");
         playerMove = thePlayer.GetComponent<Player>();
         playerHoldingCard = false;
+        //for (int i = 0; i < cards.Length; i++) {
+        //    cards[i] = GameObject.FindGameObjectWithTag("card").GetComponent<move>();
+        //}
+        int i = 0;
+        foreach (GameObject card in GameObject.FindGameObjectsWithTag("card")) {
+            if (i < GameObject.FindGameObjectsWithTag("card").Length) {
+                cards[i] = card.GetComponent<move>();
+                i++;
+            }
+        }
 	}
 
 	void Update () {

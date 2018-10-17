@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour {
     private List<int> sceneSelection = new List<int>();     //list of scene indices?
     //public float gameTimer;
     //public float gameTimerFull = 10f;
+    public GameObject startHand;
+    public GameObject level1Hand;
+    public Camera mainCamera;
 
     // Use this for initialization
     void Awake () {
@@ -49,6 +52,12 @@ public class GameManager : MonoBehaviour {
         levelImage.GetComponent<Image>().CrossFadeAlpha(0.1f, 1f, false);
         Invoke("HideLevelImage", levelStartDelay);
 		boardScript.SetupScene();
+        if (SceneManager.GetActiveScene().name == "main") {
+            Instantiate(startHand, GameObject.FindGameObjectWithTag("MainCamera").transform);
+        }
+        else {
+            Instantiate(level1Hand, GameObject.FindGameObjectWithTag("MainCamera").transform);
+        }
 	}
 
     private void HideLevelImage() {

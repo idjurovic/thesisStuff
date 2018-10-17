@@ -11,8 +11,8 @@ public class move : MonoBehaviour {
     public int placementReq;
     private Vector3 startPos;
     public NPCscript talker;
-    public Player playerScript;
-    public CoolGuy npcScript;
+    //public Player playerScript;
+    //public CoolGuy npcScript;
 
 	// Use this for initialization
 	void Start () {
@@ -29,18 +29,18 @@ public class move : MonoBehaviour {
             Vector3 temp = Input.mousePosition;
             temp.z = 10f;
             this.gameObject.transform.position = Camera.main.ScreenToWorldPoint(temp);
-            playerScript.holdingCard = true;
-            npcScript.playerHoldingCard = true;
+            //playerScript.holdingCard = true;
+            //npcScript.playerHoldingCard = true;
         }
-        else {
-            //this.gameObject.transform.position = startPos;
-            if (playerScript != null) {
-                playerScript.holdingCard = false; 
-            }
-            if (npcScript != null) {
-                npcScript.playerHoldingCard = false;
-            }
-        }
+        //else {
+        //    this.gameObject.transform.position = startPos;
+        //    if (playerScript != null) {
+        //        //playerScript.holdingCard = false; 
+        //    }
+        //    if (npcScript != null) {
+        //        //npcScript.playerHoldingCard = false;
+        //    }
+        //}
     }
 
     private void OnMouseDown() {
