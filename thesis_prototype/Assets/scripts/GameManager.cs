@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour {
     public GameObject startHand;
     public GameObject level1Hand;
     public Camera mainCamera;
+    public int playerLevel;
+    public int numCorrects;
 
     // Use this for initialization
     void Awake () {
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour {
         //Cursor.visible = false;
         SetupGame();
         //RestartGame();
+        //playerLevel = 0;
     }
 
     private void OnLevelWasLoaded (int index) {
@@ -52,7 +55,8 @@ public class GameManager : MonoBehaviour {
         levelImage.GetComponent<Image>().CrossFadeAlpha(0.1f, 1f, false);
         Invoke("HideLevelImage", levelStartDelay);
 		boardScript.SetupScene();
-        if (SceneManager.GetActiveScene().name == "main") {
+        //if (SceneManager.GetActiveScene().name == "main") {
+        if (playerLevel < 1) {
             Instantiate(startHand, GameObject.FindGameObjectWithTag("MainCamera").transform);
         }
         else {
@@ -70,20 +74,11 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Game Over");
         //gameTimer = 999;
         SceneManager.LoadScene(9);
-        //StartCoroutine(WaitForAnim());
         //RestartGame();
     }
 
     // Update is called once per frame
     void Update () {
-
-        //gameTimer -= Time.deltaTime;
-        //if (gameTimer < 0) {
-        //    GameOver();
-        //    //gameTimer = 999;
-        //    //load cutscene once
-        //}
-
 	    if (sceneTransitionTimer > 0) {
             sceneTransitionTimer -= Time.deltaTime;
             if (sceneTransitionTimer <= 0) {
@@ -92,15 +87,10 @@ public class GameManager : MonoBehaviour {
         }
         //***remember to put here the number of the last scene if you add more!!***
         if (SceneManager.GetActiveScene().buildIndex == 9) {
-            //gameTimer = 999;
-            //StartCoroutine(WaitForAnim());
             GameObject theEnd = GameObject.Find("sprite_166");
             string lastFrame = theEnd.GetComponent<SpriteRenderer>().sprite.name;
             if (lastFrame == "sprite_201") {
-                //StartCoroutine(WaitForAnim());
                 Debug.Log("restarting");
-                //SetupGame();
-                //GenScenes();
                 RestartGame();
                 //SceneManager.LoadScene("main");
             }
@@ -125,16 +115,12 @@ public class GameManager : MonoBehaviour {
     }
 
     public void SetupGame() {
-        //gameTimer = gameTimerFull;
-        //scenes = SceneManager.sceneCountInBuildSettings;
-        //for (int i = 0; i < scenes; i++) {
-            //sceneSelection.Add(i);
-        //}
         GenScenes();
         //SelectScene();
         boardScript = GetComponent<BoardManager>();
         RestartScene();
         SceneManager.LoadScene("main");
+        playerLevel = 0;
     }
 
     void RestartGame() {
@@ -160,8 +146,22 @@ public class GameManager : MonoBehaviour {
         nextScene++;
     }
 
-    //IEnumerator WaitForAnim() {
-        //yield return new WaitForSeconds(20f);
-        //RestartGame();
-    //}
+    public void ExitConvo() {
+        if (playerLevel <= 0) {
+            //bad end
+            Debug.Log("bad end\n" + numCorrects);
+            SceneManager.LoadScene("badEnd");
+        }
+        //else if (numCorrects > 0 && numCorrects < 2) {
+        //    //normal end
+        //    Debug.Log("normal end\n" + numCorrects);
+        //    SceneManager.LoadScene("normalEnd");
+        //}
+        else {
+            //good end
+            Debug.Log("good end\n" + numCorrects);
+            //playerLevel++;  //this currently doesn't do anything
+            SceneManager.LoadScene("goodEnding");
+        }
+    }
 }

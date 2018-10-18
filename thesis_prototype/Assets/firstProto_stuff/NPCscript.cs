@@ -20,7 +20,7 @@ public class NPCscript : MonoBehaviour {
 
     public int cardsReceived;
     public bool doneTalking;
-    public Controller controller;
+    public GameManager controller;
 
     public int roomNumber;
 
@@ -44,6 +44,9 @@ public class NPCscript : MonoBehaviour {
         else if (SceneManager.GetActiveScene().name == "convo3") {
             roomNumber = 3;
         }
+
+        controller = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        controller.numCorrects = 0;
     }
 	
 	// Update is called once per frame
@@ -144,6 +147,12 @@ public class NPCscript : MonoBehaviour {
 
             if (cardsReceived > 1) {
                 doneTalking = true;
+                if (controller.numCorrects > 1) {
+                    controller.playerLevel++;
+                }
+                else if (controller.numCorrects <= 0) {
+                    controller.playerLevel--;
+                }
             }
 
             received = false;

@@ -11,6 +11,7 @@ public class Controller : MonoBehaviour {
     public move moveScript3;
     List<int> ends = new List<int>();
     public NPCscript NPC;
+    public GameManager gameManager;
 
 	// Use this for initialization
 	void Start () {
@@ -39,6 +40,7 @@ public class Controller : MonoBehaviour {
         else {
             //good end
             Debug.Log("good end\n" + numCorrects);
+            gameManager.playerLevel++;
             SceneManager.LoadScene("goodEnding");
         }
         //SceneManager.LoadScene("test");
