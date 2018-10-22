@@ -56,50 +56,6 @@ public class CoolGuy : MonoBehaviour {
                     Debug.Log("boo");
                 }
             }
-
-            //if (!card.clicked) {
-            //    playerHoldingCard = true;
-            //    Debug.Log("card is clicked");
-            //}
-            //else {
-            //    Debug.Log("card is NOT clicked");
-            //}
-
-            //if (Input.GetButtonDown("Fire1")) {
-            //    //thePlayer.GetComponent<Animator>().SetTrigger("seedieStop");
-            //    //if (Dialogue.instance.IsTalking() == false) {
-            //    //    //Debug.Log("sending dialogue");
-            //    //    //Dialogue.instance.PlayDialogue(dialogue);
-            //    //    talkedTo = true;
-            //    //    if (SceneManager.GetActiveScene().name == "main") {
-            //    //        SceneManager.LoadScene("convo");
-            //    //    }
-            //    //    else if (SceneManager.GetActiveScene().name == "room2") {
-            //    //        SceneManager.LoadScene("convo2");
-            //    //    }
-            //    //    else if (SceneManager.GetActiveScene().name == "room3") {
-            //    //        SceneManager.LoadScene("convo3");
-            //    //    }
-            //    //    else if (SceneManager.GetActiveScene().name == "room4") {
-            //    //        SceneManager.LoadScene("convo");
-            //    //    }
-            //    //    else if (SceneManager.GetActiveScene().name == "room5") {
-            //    //        SceneManager.LoadScene("convo2");
-            //    //    }
-            //    //    else if (SceneManager.GetActiveScene().name == "room6") {
-            //    //        SceneManager.LoadScene("convo3");
-            //    //    }
-            //    //    else if (SceneManager.GetActiveScene().name == "room7") {
-            //    //        SceneManager.LoadScene("convo");
-            //    //    }
-            //    //    else if (SceneManager.GetActiveScene().name == "room8") {
-            //    //        SceneManager.LoadScene("convo2");
-            //    //    }
-            //    //    else if (SceneManager.GetActiveScene().name == "room9") {
-            //    //        SceneManager.LoadScene("convo3");
-            //    //    }
-            //    //}
-            //}
         }
     }
 

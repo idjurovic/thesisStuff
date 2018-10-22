@@ -9,7 +9,7 @@ public class Replay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        coroutine = Wait(5f);
+        coroutine = Wait(3f);
         StartCoroutine(coroutine);
 	}
 	
