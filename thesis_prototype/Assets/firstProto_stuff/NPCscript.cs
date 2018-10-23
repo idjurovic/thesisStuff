@@ -147,12 +147,36 @@ public class NPCscript : MonoBehaviour {
 
             if (cardsReceived > 1) {
                 doneTalking = true;
-                if (controller.numCorrects > 1) {
-                    controller.playerLevel++;
+                if (roomNumber == 1) {
+                    if (controller.numCorrects > 1) {
+                        controller.playerLevel = 1;
+                    }
+                    else if (controller.numCorrects <= 0) {
+                        controller.playerLevel = 0;
+                    }
                 }
-                else if (controller.numCorrects <= 0) {
-                    controller.playerLevel--;
+                else if (roomNumber == 2) {
+                    if (controller.numCorrects > 1) {
+                        controller.playerLevel = 2;
+                    }
+                    else if (controller.numCorrects <= 0) {
+                        controller.playerLevel = 1;
+                    }
                 }
+                else {
+                    if (controller.numCorrects > 1) {
+                        controller.playerLevel = 3;
+                    }
+                    else if (controller.numCorrects <= 0) {
+                        controller.playerLevel = 2;
+                    }
+                }
+                //if (controller.numCorrects > 1) {
+                //    controller.playerLevel++;
+                //}
+                //else if (controller.numCorrects <= 0) {
+                //    controller.playerLevel--;
+                //}
             }
 
             received = false;

@@ -14,14 +14,16 @@ public class GameManager : MonoBehaviour {
     private GameObject levelImage;      //black curtain
     private bool doingSetup;    //setting up board?
     private int nextScene;
-    private int sceneSelectIndex;
-    private int scenes;
+    //private int sceneSelectIndex;
+    //private int scenes;
     //private int scenes = SceneManager.sceneCountinBuildSettings;
     private List<int> sceneSelection = new List<int>();     //list of scene indices?
     //public float gameTimer;
     //public float gameTimerFull = 10f;
     public GameObject startHand;
     public GameObject level1Hand;
+    public GameObject level2Hand;
+    public GameObject level3Hand;
     public Camera mainCamera;
     public int playerLevel;
     public int numCorrects;
@@ -59,10 +61,16 @@ public class GameManager : MonoBehaviour {
         if (playerLevel < 1) {
             Instantiate(startHand, GameObject.FindGameObjectWithTag("MainCamera").transform);
         }
-        else {
+        else if (playerLevel == 1) {
             Instantiate(level1Hand, GameObject.FindGameObjectWithTag("MainCamera").transform);
         }
-	}
+        else if (playerLevel == 2) {
+            Instantiate(level2Hand, GameObject.FindGameObjectWithTag("MainCamera").transform);
+        }
+        else if (playerLevel > 2) {
+            Instantiate(level3Hand, GameObject.FindGameObjectWithTag("MainCamera").transform);
+        }
+    }
 
     private void HideLevelImage() {
         //levelImage.SetActive(false);
@@ -71,9 +79,9 @@ public class GameManager : MonoBehaviour {
     }
 
     public void GameOver() {
-        Debug.Log("Game Over");
+        //Debug.Log("Game Over");
         //gameTimer = 999;
-        SceneManager.LoadScene(9);
+        SceneManager.LoadScene(0);
         //RestartGame();
     }
 
@@ -86,15 +94,15 @@ public class GameManager : MonoBehaviour {
             }
         }
         //***remember to put here the number of the last scene if you add more!!***
-        if (SceneManager.GetActiveScene().buildIndex == 9) {
-            GameObject theEnd = GameObject.Find("sprite_166");
-            string lastFrame = theEnd.GetComponent<SpriteRenderer>().sprite.name;
-            if (lastFrame == "sprite_201") {
-                Debug.Log("restarting");
-                RestartGame();
-                //SceneManager.LoadScene("main");
-            }
-        }
+        //if (SceneManager.GetActiveScene().buildIndex == 9) {
+        //    GameObject theEnd = GameObject.Find("sprite_166");
+        //    string lastFrame = theEnd.GetComponent<SpriteRenderer>().sprite.name;
+        //    if (lastFrame == "sprite_201") {
+        //        Debug.Log("restarting");
+        //        RestartGame();
+        //        //SceneManager.LoadScene("main");
+        //    }
+        //}
     }
 
     public void Restart(float transitionTimer) {
@@ -131,8 +139,13 @@ public class GameManager : MonoBehaviour {
 
     void GenScenes() {
         sceneSelection.Clear();
-        scenes = SceneManager.sceneCountInBuildSettings;
-        for (int i = 0; i < scenes; i++) {
+        //scenes = SceneManager.sceneCountInBuildSettings;
+        //for (int i = 0; i < scenes; i++) {
+        //    sceneSelection.Add(i);
+        //}
+        
+        // because there's 3 rooms/convos I've made hahaha I'm lazy hahahahaha
+        for (int i = 0; i < 3; i++) {
             sceneSelection.Add(i);
         }
     }
@@ -142,8 +155,13 @@ public class GameManager : MonoBehaviour {
         //nextScene = sceneSelection[sceneSelectIndex];
         //sceneSelection.RemoveAt(sceneSelectIndex);
         Debug.Log(nextScene);
+        if (nextScene > sceneSelection.Count) {
+            nextScene = 0;
+        }
+        else {
+            nextScene++;
+        }
         SceneManager.LoadScene(nextScene);
-        nextScene++;
     }
 
     public void ExitConvo() {
