@@ -155,7 +155,7 @@ public class GameManager : MonoBehaviour {
         //nextScene = sceneSelection[sceneSelectIndex];
         //sceneSelection.RemoveAt(sceneSelectIndex);
         Debug.Log(nextScene);
-        if (nextScene > sceneSelection.Count) {
+        if (nextScene > 1) {
             nextScene = 0;
         }
         else {
