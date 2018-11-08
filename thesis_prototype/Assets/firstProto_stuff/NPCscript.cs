@@ -56,19 +56,16 @@ public class NPCscript : MonoBehaviour {
             Debug.Log(cardsReceived);
             if (roomNumber == 1) {
                 if (card1) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue1);
                     controller.numCorrects++;
                     card1 = false;
                 }
                 else if (card2) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue2);
                     controller.numCorrects++;
                     card2 = false;
                 }
                 else if (card3) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue3);
                     controller.numCorrects--;
                     card3 = false;
@@ -76,25 +73,21 @@ public class NPCscript : MonoBehaviour {
             }
             else if (roomNumber == 2) {
                 if (card1) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue1);
                     controller.numCorrects--;
                     card1 = false;
                 }
                 else if (card2) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue2);
                     controller.numCorrects--;
                     card2 = false;
                 }
                 else if (card3) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue3);
                     controller.numCorrects++;
                     card3 = false;
                 }
                 else if (card4) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue4);
                     controller.numCorrects++;
                     card4 = false;
@@ -102,25 +95,21 @@ public class NPCscript : MonoBehaviour {
             }
             else if (roomNumber == 3) {
                 if (card1) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue1);
                     controller.numCorrects--;
                     card1 = false;
                 }
                 else if (card2) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue2);
                     controller.numCorrects--;
                     card2 = false;
                 }
                 else if (card3) {
-                    Debug.Log("sending dialogue");
                     Dialogue.instance.PlayDialogue(dialogue3);
                     controller.numCorrects++;
                     card3 = false;
                 }
                 else if (card4) {
-                    Debug.Log("sending dialogue");
                     if (GameObject.Find("card_5")) {
                         Dialogue.instance.PlayDialogue(dialogue4);
                         controller.numCorrects++;
@@ -132,7 +121,6 @@ public class NPCscript : MonoBehaviour {
                     card4 = false;
                 }
                 else if (card5) {
-                    Debug.Log("sending dialogue");
                     if (GameObject.Find("card_4")) {
                         Dialogue.instance.PlayDialogue(dialogue4);
                         controller.numCorrects++;

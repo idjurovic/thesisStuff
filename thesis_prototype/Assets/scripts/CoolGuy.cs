@@ -29,10 +29,10 @@ public class CoolGuy : MonoBehaviour {
         //}
         int i = 0;
         foreach (GameObject card in GameObject.FindGameObjectsWithTag("card")) {
-            if (i < GameObject.FindGameObjectsWithTag("card").Length) {
+            //if (i < GameObject.FindGameObjectsWithTag("card").Length) {
                 cards[i] = card.GetComponent<move>();
                 i++;
-            }
+            //}
         }
 	}
 
